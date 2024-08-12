@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Doctor Dashboard - TeleMedico</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Doctor Dashboard</a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link" href="doctor1.html">Dashboard</a></li>
+          <li><a class="nav-link scrollto" href="#follow_up_data">Follow-up Data</a></li>
+          <li><a class="nav-link scrollto" href="#diagnostics">Diagnostics</a></li>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </ul>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- Home Section -->
+  <section id="home" class="py-5">
+    <div class="container">
+      <h2 class="text-center">Welcome to Doctor Dashboard</h2>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>TeleMedico is a cutting-edge telehealth platform aimed at revolutionizing healthcare accessibility. Our mission
+        is to provide seamless remote medical consultations, ensuring convenience and quality care for all. Through
+        advanced technologies and a user-friendly interface, TeleMedico connects patients with healthcare professionals,
+        empowering individuals to manage their health from anywhere. Join us in shaping the future of healthcare delivery,
+        where distance is no longer a barrier to receiving expert medical guidance and support.</p>
+    </div>
+  </section>
+
+  <!-- Follow-up Data Section -->
+  <section id="follow_up_data" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Follow-up Data</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Patient ID</th>
+              <th>Disease</th>
+              <th>Blood Sugar Level (mg/dL)</th>
+              <th>Blood Pressure</th>
+              <th>Blood Oxygen Levels</th>
+              <!-- Add more columns as needed for additional measurements -->
+            </tr>
+          </thead>
+          <tbody id="followUpDataBody">
+            <!-- Follow-up data will be dynamically populated here -->
+          </tbody>
+        </table>
+      </div>
+      <button id="diagnoseBtn" class="btn btn-primary mt-3">Diagnose</button>
+    </div>
+  </section>
+
+
+  <!-- Diagnostics Section -->
+  <section id="diagnostics" class="py-5 bg-light">
+    <div class="container">
+      <h2>Diagnostics</h2>
+      <p>This section will display the diagnosis results.</p>
+      <div id="diagnosisResult"></div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Bootstrap and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Function to generate random follow-up data
+    function generateRandomFollowUpData() {
+      const patients = ["P001"];
+      const diseases = ["Diabetes", "Cancer", "Diabetes"];
+      const bloodSugarLevels = ["180"];
+      const bloodPressures = ["130/80"];
+      const bloodoxygenlevels = ["97"];
+      // Add more arrays for additional measurements as needed
+
+      const followUpDataBody = document.getElementById('followUpDataBody');
+      followUpDataBody.innerHTML = ''; // Clear previous data
+
+      // Generate and append new rows
+      const index = Math.floor(Math.random() * patients.length);
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${patients[index]}</td>
+        <td>${diseases[index]}</td>
+        <td>${bloodSugarLevels[index]}</td>
+        <td>${bloodPressures[index]}</td>
+        <td>${bloodoxygenlevels[index]}</td>
+        <!-- Add more <td> elements for additional measurements -->
+      `;
+      followUpDataBody.appendChild(newRow);
+    }
+
+    // Event listener for the Diagnose button
+    document.getElementById('diagnoseBtn').addEventListener('click', function () {
+      const diagnosisResult = document.getElementById('diagnosisResult');
+      // You can implement your diagnosis logic here
+      // For demonstration, let's assume the diagnosis result
+      const result = `
+        <h3>Diagnosis Result</h3>
+        <p>Level of risk: High</p>
+        <p>Progress in this week: Stable</p>
+        <p>Consultation requirement: Immediate</p>
+      `;
+      diagnosisResult.innerHTML = result;
+    });
+
+    // Generate random follow-up data on page load
+    generateRandomFollowUpData();
+
+  </script>
+
+</body>
+
+</html>

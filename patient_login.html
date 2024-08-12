@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>TeleMedico</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <style>
+    /* Add custom CSS styles here */
+    body {
+      background-color: #f8f9fa;
+    }
+    
+    .container {
+      margin-top: 100px;
+      text-align: center;
+    }
+    
+    h2 {
+      color: #333;
+    }
+    
+    form {
+      margin-top: 30px;
+    }
+    
+    label {
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: 1px solid #ced4da;
+      box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Include common navigation bar here -->
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> 
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <h1 class="logo me-auto"><a href="index.html">TeleMedico</a></h1>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#Contact-Us">Contact-Us</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Home Section ======= -->
+  <section id="home" class="d-flex align-items-center">
+    <div class="container">
+      <div id="loginButtons">
+        <button onclick="window.location.href='#patientLogin'" class="btn-get-started scrollto">Patient Login</button>
+      </div>
+    </div>
+  </section><!-- End Home -->
+
+  <br><br><br><br><br><br><br><br>
+  <main id="main">
+
+    <div class="container" id="patientLogin">
+        <h2>Patient Login</h2>
+        <form action="php/patient_login.php" method="POST">
+          <label for="patient_id">Patient ID:</label><br>
+          <input type="text" id="patient_id" name="patient_id" required><br>
+          <label for="username">Username:</label><br>
+          <input type="text" id="username" name="username" required><br>
+          <label for="password">Password:</label><br>
+          <input type="password" id="password" name="password" required><br><br>
+          <input type="submit" value="Login">
+
+        </form>
+      </div>
+
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>TeleMedico is a cutting-edge telehealth platform aimed at revolutionizing healthcare accessibility.<br> Our mission is to provide seamless remote medical consultations, ensuring convenience and quality care for all.<br> Through advanced technologies and a user-friendly interface, TeleMedico connects patients with healthcare professionals, empowering individuals to manage their health from anywhere.<br> Join us in shaping the future of healthcare delivery, where distance is no longer a barrier to receiving expert medical guidance and support.</p>
+        </div>
+  
+      <div class="row">
+      <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center
+       align-items-stretch position-relative">
+      <a href="https://youtu.be/axk1lN4fLv8?si=wYwWKMth8UJ_MYSD" class="glightbox play-btn mb-4"></a>
+            </div>
+  
+      <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch
+       justify-content-center py-5 px-lg-5">
+              
+       <div class="icon-box">
+        <div class="icon"><i class="bx bx-heart"></i></div>
+        <h4 class="title"><a href="">HEALTH IS WEALTH</a></h4>
+        <p class="description">"Health is Wealth" encapsulates the essence of prioritizing well-being for a fulfilling life.<br> It emphasizes the invaluable nature of good health, essential for achieving one's full potential and happiness. Just as financial wealth enriches life, maintaining physical and mental health is crucial for overall prosperity.<br> By nurturing our health through proper care, nutrition, and lifestyle choices, we invest in a prosperous future, enjoying the abundance of vitality and vitality it brings.</p>
+      </div>
+
+      <div class="icon-box">
+        <div class="icon"><i class="bx bx-health"></i></div>
+        <h4 class="title"><a href="">EMERGENCY</a></h4>
+        <p class="description">"TeleMedico offers a vital solution for scheduling urgent appointments, ensuring timely access to medical care for critical patients.<br> By leveraging our platform, individuals facing emergencies can swiftly connect with healthcare providers online, facilitating prompt diagnosis and treatment.<br> This seamless process minimizes delays and ensures that patients receive the urgent care they require, aligning with our commitment to delivering efficient and accessible healthcare services."</p>
+      </div>
+
+      <div class="icon-box">
+        <div class="icon"><i class="bx bx-help-circle"></i></div>
+        <h4 class="title"><a href="">SERVICES </a></h4>
+        <p class="description">"At TeleMedico, we provide a comprehensive range of services tailored to meet diverse healthcare needs.<br> From teleconsultations with experienced medical professionals to teleprescriptions for convenient medication management, our platform ensures access to quality healthcare from the comfort of your home.<br> Whether seeking expert medical advice, scheduling appointments, or managing prescriptions, TeleMedico offers a seamless and efficient solution.<br> Our commitment to excellence and patient-centered care drives us to deliver reliable and accessible healthcare services for all."</p>
+      </div>
+              
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End About Section -->
+
+      <!-- ======= Contact Section ======= -->
+    <section id="Contact-Us" class="contact">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Contact</h2>
+            <p>"At TeleMedico, reaching out to us is simple and convenient. You can connect with us directly via WhatsApp by clicking on the following number: +91 9177604122. Alternatively, you can also reach us via email by clicking on the provided email address. Whether you have questions, feedback, or inquiries about our services, we're here to assist you every step of the way. Don't hesitate to contact us – your health and well-being are our top priorities."</p>
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="row mt-5">
+  
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="address">
+                  <i class="bi bi-geo-alt"></i>
+                  <h4>Location:</h4>
+                  <p>KIST Hospital Road, 44700</p>
+                </div>
+  
+                <div class="email">
+                  <i class="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>telemedico.co@gmail.com</p>
+                </div>
+  
+                <div class="phone">
+                  <i class="bi bi-phone"></i>
+                  <h4>Call:</h4>
+                  <p>+91 6300412432</p>
+                </div>
+  
+                <div class="contact-options">
+                  <a href="#" data-option="whatsapp"><i class="bi bi-whatsapp"></i><h4>WhatsApp</h4></a>
+                  <p>+91 6300412432</p>
+                </div>
+  
+                <div class="contact-options">
+                <a href="#" data-option="mail"><i class="bi bi-envelope-fill"></i><h4>Email</h4></a>
+                <p>telemedico.co@gmail.com</p>
+              </div
+  
+  
+              </div>
+            </div>
+  
+              
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        
+  
+      </section><!-- End Contact Section -->
+
+
+      <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Tele-Medico</h3>
+              <p>
+                KIST Hospital Road<br>
+                44700 KTM, NEPAL<br><br>
+                <strong>Phone:</strong>+91 6300412432<br>
+                <strong>Email:</strong>telemedico.co@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="https://www.facebook.com/groups/577400563258704" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>  
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#doctor">Doctors</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Extra Web Course</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Navbar Tutorial</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe for our newsletter to receive daily medical improvisation tips via email.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Tele-Medico</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://www.youtube.com/channel/UCc5GjlNTdSV4ZZCsX61mccg">PraRoz</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  
+  <script>
+    // Show patient login by default
+    document.getElementById('patientLogin').style.display = 'block';
+    
+    // Function to toggle between patient and doctor login
+    function toggleLogin(type) {
+      if (type === 'patient') {
+        document.getElementById('patientLogin').style.display = 'block';
+        document.getElementById('doctorLogin').style.display = 'none';
+      } else {
+        document.getElementById('patientLogin').style.display = 'none';
+        document.getElementById('doctorLogin').style.display = 'block';
+      }
+    }
+
+    // Contact options functionality
+    const contactLinks = document.querySelectorAll('.contact-options a');
+
+
+    // Smooth scrolling
+    document.addEventListener('DOMContentLoaded', function() {
+      const scrollLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+      for (const link of scrollLinks) {
+        link.addEventListener('click', smoothScroll);
+      }
+
+      function smoothScroll(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+  const whatsappButton = document.querySelector('.contact-options a[data-option="whatsapp"]');
+  const mailButton = document.querySelector('.contact-options a[data-option="mail"]');
+
+  // WhatsApp button functionality
+  whatsappButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    window.location.href = 'https://wa.me/+916300412432'; // Replace with your WhatsApp contact URL
+  });
+
+  // Mail button functionality
+  mailButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    window.location.href = 'mailto:prcare@example.com'; // Replace with your email address
+  });
+});
+
+
+
+      // Contact options functionality
+      const contactLinks = document.querySelectorAll('.contact-options a');
+
+      contactLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const option = this.getAttribute('data-option');
+          switch (option) {
+            case 'whatsapp':
+              window.location.href = 'https://wa.me/+916300412432';
+              break;
+            case 'mail':
+              window.location.href = 'mailto:telemedico.co@gmail.com';
+              break;
+            default:
+              break;
+          }
+        });
+      });
+    });
+
+
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+  <script src="vendor/purecounter/purecounter.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
