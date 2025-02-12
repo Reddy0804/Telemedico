@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Doctor Dashboard - TeleMedico</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <!-- ======= Top Bar ======= -->
+   <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> 
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </div>
+
+ 
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a href="index.html">Doctor Dashboard</a></h1>
+  
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+         <li><a class="nav-link" href="doctor1.html">Dasboard</a></li>
+         <li><a class="nav-link scrollto" href="#appointments">Appointments</a></li>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+  </div>
+</header><!-- End Header -->
+
+  <!-- Home Section -->
+  <section id="home" class="py-5">
+    <div class="container">
+      <h2 class="text-center">Welcome to Doctor Dashboard</h2>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>TeleMedico is a cutting-edge telehealth platform aimed at revolutionizing healthcare accessibility. Our mission
+        is to provide seamless remote medical consultations, ensuring convenience and quality care for all. Through
+        advanced technologies and a user-friendly interface, TeleMedico connects patients with healthcare professionals,
+        empowering individuals to manage their health from anywhere. Join us in shaping the future of healthcare delivery,
+        where distance is no longer a barrier to receiving expert medical guidance and support.</p>
+    </div>
+  </section>
+
+  <!-- Appointments Section -->
+  <section id="appointments" class="py-5">
+    <div class="container">
+      <h2>Appointments</h2>
+      <p>This section will display the appointments table.</p>
+      <button id="toggleTableBtn" class="btn btn-primary">Show Appointments</button>
+      <div id="appointmentsTable" class="table-responsive mt-3" style="display: none;">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Patient Name</th>
+              <th>Patient ID</th>
+              <th>Timing</th>
+            </tr>
+          </thead>
+          <tbody id="appointmentsBody">
+            <!-- Appointments data will be dynamically populated here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Bootstrap and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Function to generate random appointments data
+    function generateRandomAppointments() {
+      const patients = ["John Doe", "Jane Smith", "Michael Johnson"];
+      const patientIDs = ["P001", "P002", "P003"];
+      const timings = ["9:00 AM", "11:00 AM", "2:00 PM"];
+      const appointmentsBody = document.getElementById('appointmentsBody');
+      appointmentsBody.innerHTML = ''; // Clear previous data
+      // Generate and append new rows
+      for (let i = 0; i < patients.length; i++) {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+          <td>${patients[i]}</td>
+          <td>${patientIDs[i]}</td>
+          <td>${timings[i]}</td>
+        `;
+        appointmentsBody.appendChild(newRow);
+      }
+    }
+
+    // Event listener for the toggle button
+    document.getElementById('toggleTableBtn').addEventListener('click', function () {
+      const appointmentsTable = document.getElementById('appointmentsTable');
+      if (appointmentsTable.style.display === 'none') {
+        appointmentsTable.style.display = 'block';
+        // Generate random appointments data when table is shown
+        generateRandomAppointments();
+      } else {
+        appointmentsTable.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+
+</html>

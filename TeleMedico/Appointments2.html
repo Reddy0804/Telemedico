@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Patient Dashboard - TeleMedico</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-between">
+            <div class="d-none d-lg-flex social-links align-items-center">
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a href="index.html">Patient Dashboard</a></h1>
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link" href="doctor2.html">Dashboard</a></li>
+                    <li><a class="nav-link scrollto" href="#appointments">Appointments</a></li>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <!-- Home Section -->
+    <section id="home" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Welcome to Patient Dashboard</h2>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>TeleMedico is a cutting-edge telehealth platform aimed at revolutionizing healthcare accessibility. Our
+                mission
+                is to provide seamless remote medical consultations, ensuring convenience and quality care for all.
+                Through
+                advanced technologies and a user-friendly interface, TeleMedico connects patients with healthcare
+                professionals,
+                empowering individuals to manage their health from anywhere. Join us in shaping the future of healthcare
+                delivery,
+                where distance is no longer a barrier to receiving expert medical guidance and support.</p>
+        </div>
+    </section>
+
+    <!-- Appointments Section -->
+    <section id="appointments" class="py-5">
+        <div class="container">
+            <h2>Appointments</h2>
+            <p>This section will display the appointments table.</p>
+            <button id="toggleTableBtn" class="btn btn-primary">Show Appointments</button>
+            <div id="appointmentsTable" class="table-responsive mt-3" style="display: none;">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Doctor ID</th>
+                            <th>Doctor Name</th>
+                            <th>Speciality</th>
+                            <th>Consultation Start Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointmentsBody">
+                        <!-- Appointments data will be dynamically populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Bootstrap and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Function to generate random appointments data
+        function generateRandomAppointments() {
+            const doctors = [
+                { id: "D001", name: "Dr. John Smith", speciality: "Cardiologist" },
+                { id: "D002", name: "Dr. Emily Johnson", speciality: "Dermatologist" },
+                { id: "D003", name: "Dr. Michael Williams", speciality: "Neurologist" }
+            ];
+            const now = new Date();
+            const startTimes = [
+                new Date(now.getTime() + 15 * 60000), // 15 minutes from now
+                new Date(now.getTime() + 30 * 60000), // 30 minutes from now
+                new Date(now.getTime() + 45 * 60000)  // 45 minutes from now
+            ];
+            const appointmentsBody = document.getElementById('appointmentsBody');
+            appointmentsBody.innerHTML = ''; // Clear previous data
+            // Generate and append new rows
+            const randomIndex = Math.floor(Math.random() * doctors.length);
+            const randomDoctor = doctors[randomIndex];
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${randomDoctor.id}</td>
+                <td>${randomDoctor.name}</td>
+                <td>${randomDoctor.speciality}</td>
+                <td>${formatTime(startTimes[randomIndex])}</td>
+            `;
+            appointmentsBody.appendChild(newRow);
+        }
+
+        // Function to format time as hh:mm AM/PM
+        function formatTime(time) {
+            const hours = time.getHours();
+            const minutes = time.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+            const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+            return formattedHours + ':' + formattedMinutes + ' ' + ampm;
+        }
+
+        // Event listener for the toggle button
+        document.getElementById('toggleTableBtn').addEventListener('click', function () {
+            const appointmentsTable = document.getElementById('appointmentsTable');
+            if (appointmentsTable.style.display === 'none') {
+                appointmentsTable.style.display = 'block';
+                // Generate random appointments data when table is shown
+                generateRandomAppointments();
+            } else {
+                appointmentsTable.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
